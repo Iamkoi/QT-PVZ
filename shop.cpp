@@ -4,10 +4,9 @@
 
 #include "sunflower.h"
 #include "peashooter.h"
-//#include "repeater.h"
-//#include "snowpea.h"
-//#include "wallnut.h"
-
+#include "repeater.h"
+#include "snowpea.h"
+#include "wallnut.h"
 //#include "tallnut.h"
 //#include "squash.h"
 //#include "cherrybomb.h"
@@ -64,12 +63,12 @@ void Shop::addPlant(QString s, QPointF pos)
         plant = new SunFlower; break;
     case 1:
         plant = new PeaShooter; break;
-//    case 2:
-//        plant = new Repeater; break;
-//    case 3:
-//        plant = new SnowPea; break;
-//    case 4:
-//        plant = new WallNut; break;
+    case 2:
+        plant = new Repeater; break;
+    case 3:
+        plant = new SnowPea; break;
+    case 4:
+        plant = new WallNut; break;
 //    case 5:
 //        plant = new TallNut; break;
 //    case 6:

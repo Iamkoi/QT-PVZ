@@ -6,7 +6,7 @@
 #include <QGraphicsScene>
 
 #include "pea_normal.h"
-//#include "pea_snow.h"
+#include "pea_snow.h"
 //#include "basketball.h"
 
 class Plant : public QGraphicsItem

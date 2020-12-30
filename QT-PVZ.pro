@@ -38,7 +38,11 @@ SOURCES += \
     normalzombie.cpp \
     pea.cpp \
     pea_normal.cpp \
-    sunflower.cpp
+    sunflower.cpp \
+    repeater.cpp \
+    snowpea.cpp \
+    pea_snow.cpp \
+    wallnut.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -53,7 +57,11 @@ HEADERS += \
     normalzombie.h \
     pea.h \
     pea_normal.h \
-    sunflower.h
+    sunflower.h \
+    repeater.h \
+    snowpea.h \
+    pea_snow.h \
+    wallnut.h
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
