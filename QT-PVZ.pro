@@ -42,7 +42,9 @@ SOURCES += \
     repeater.cpp \
     snowpea.cpp \
     pea_snow.cpp \
-    wallnut.cpp
+    wallnut.cpp \
+    tallnut.cpp \
+    squash.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -61,7 +63,9 @@ HEADERS += \
     repeater.h \
     snowpea.h \
     pea_snow.h \
-    wallnut.h
+    wallnut.h \
+    tallnut.h \
+    squash.h
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

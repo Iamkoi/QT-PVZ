@@ -7,8 +7,8 @@
 #include "repeater.h"
 #include "snowpea.h"
 #include "wallnut.h"
-//#include "tallnut.h"
-//#include "squash.h"
+#include "tallnut.h"
+#include "squash.h"
 //#include "cherrybomb.h"
 //#include "garlic.h"
 //#include "pumpkin.h"
@@ -19,7 +19,7 @@ Shop::Shop()
 {
     counter=0;//系统产生阳光的计时器
     time=int(7.0 * 1000 / 33);;//系统产生阳光的要求时间
-    sun=200;//阳光数
+    sun=2000;//阳光数  TODO 200
 
     Card *card = nullptr;
     for (int i = 0; i < 10; ++i)
@@ -69,10 +69,10 @@ void Shop::addPlant(QString s, QPointF pos)
         plant = new SnowPea; break;
     case 4:
         plant = new WallNut; break;
-//    case 5:
-//        plant = new TallNut; break;
-//    case 6:
-//        plant = new Squash; break;
+    case 5:
+        plant = new TallNut; break;
+    case 6:
+        plant = new Squash; break;
 //    case 7:
 //        plant = new CherryBomb; break;
 //    case 8:

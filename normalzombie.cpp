@@ -68,11 +68,14 @@ void NormalZombie::advance(int phase)
                 }
             }
 
-            if (state==0)//初始状态，转攻击状态state1
+            if (state==0&&plant->state==0)//初始状态且植物是初始状态，转攻击状态state1
             {
                 state = 1;
                 setBody("://PVZ_Images/Zombies/NormalZombie/NormalZombie_body1.gif");
             }
+
+            if(plant->state!=0)//植物正在爆炸/跳起来...
+                setX(x() - speed);//前进
             return;
         }
 

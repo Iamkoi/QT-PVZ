@@ -41,7 +41,7 @@ MainWindow::~MainWindow()
 
 void MainWindow::addZombie()
 {
-    static int time = 10 * 1000 / 33;
+    static int time = 2 * 1000 / 33;//TODO
     static int counter = 0;
 
     if (++counter >= time)
