@@ -2,7 +2,7 @@
 #include "card.h"
 #include "plant.h"
 
-//#include "sunflower.h"
+#include "sunflower.h"
 #include "peashooter.h"
 //#include "repeater.h"
 //#include "snowpea.h"
@@ -58,13 +58,12 @@ void Shop::addPlant(QString s, QPointF pos)
     sun -= Card::cost[plant_num];//消耗阳光
 
     Plant *plant = nullptr;
-    plant = new PeaShooter;
-//    switch (plant_num)//选择植物
-//    {
-//    case 0:
-//        plant = new SunFlower; break;
-//    case 1:
-//        plant = new PeaShooter; break;
+    switch (plant_num)//选择植物
+    {
+    case 0:
+        plant = new SunFlower; break;
+    case 1:
+        plant = new PeaShooter; break;
 //    case 2:
 //        plant = new Repeater; break;
 //    case 3:
@@ -81,8 +80,8 @@ void Shop::addPlant(QString s, QPointF pos)
 //        plant = new Garlic; break;
 //    case 9:
 //        plant = new Pumpkin; plant->setX(x()+5); break;
-//    default:break;
-//    }
+    default:break;
+    }
 
     plant->setPos(pos);//植物位置
     scene()->addItem(plant);

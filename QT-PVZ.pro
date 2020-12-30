@@ -37,7 +37,8 @@ SOURCES += \
     peashooter.cpp \
     normalzombie.cpp \
     pea.cpp \
-    pea_normal.cpp
+    pea_normal.cpp \
+    sunflower.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -51,7 +52,8 @@ HEADERS += \
     peashooter.h \
     normalzombie.h \
     pea.h \
-    pea_normal.h
+    pea_normal.h \
+    sunflower.h
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

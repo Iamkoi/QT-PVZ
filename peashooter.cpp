@@ -50,5 +50,5 @@ bool PeaShooter::collidesWithItem(const QGraphicsItem *other, Qt::ItemSelectionM
 //        qDebug()<<"peashooter"<<x()<<","<<y();
 //    }
 
-    return other->type() == Zombie::Type && qAbs(other->y()-y())<30 &&other->x()>x();
+    return other->type() == Zombie::Type && qAbs(other->y()-y())<30 &&other->x()>x()&&other->x()-x()>30;
 }
