@@ -44,7 +44,10 @@ SOURCES += \
     pea_snow.cpp \
     wallnut.cpp \
     tallnut.cpp \
-    squash.cpp
+    squash.cpp \
+    cherrybomb.cpp \
+    garlic.cpp \
+    pumpkin.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -65,7 +68,10 @@ HEADERS += \
     pea_snow.h \
     wallnut.h \
     tallnut.h \
-    squash.h
+    squash.h \
+    cherrybomb.h \
+    garlic.h \
+    pumpkin.h
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

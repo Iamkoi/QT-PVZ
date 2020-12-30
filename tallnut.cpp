@@ -30,6 +30,6 @@ void TallNut::advance(int phase)
         movie=new QMovie("://PVZ_Images/Plants_gif/TallNut2.gif");
         movie->start();
     }
-    else if(health<0)//植物死亡
+    else if(health<=0)//植物死亡
         delete this;
 }

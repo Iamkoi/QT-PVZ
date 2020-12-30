@@ -9,9 +9,9 @@
 #include "wallnut.h"
 #include "tallnut.h"
 #include "squash.h"
-//#include "cherrybomb.h"
-//#include "garlic.h"
-//#include "pumpkin.h"
+#include "cherrybomb.h"
+#include "garlic.h"
+#include "pumpkin.h"
 
 #include <QDebug>
 
@@ -73,16 +73,19 @@ void Shop::addPlant(QString s, QPointF pos)
         plant = new TallNut; break;
     case 6:
         plant = new Squash; break;
-//    case 7:
-//        plant = new CherryBomb; break;
-//    case 8:
-//        plant = new Garlic; break;
-//    case 9:
-//        plant = new Pumpkin; plant->setX(x()+5); break;
+    case 7:
+        plant = new CherryBomb; break;
+    case 8:
+        plant = new Garlic; break;
+    case 9:
+        plant = new Pumpkin; break;
     default:break;
     }
 
     plant->setPos(pos);//植物位置
+    if(plant_num==9)//如果是南瓜头，就右移2个像素，这样僵尸在攻击的时候就会优先攻击南瓜头
+        plant->setX(plant->x()+2);
+
     scene()->addItem(plant);
     //qDebug()<<"addPlant_pos:"<<plant->x()<<","<<plant->y();
 

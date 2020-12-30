@@ -1,12 +1,12 @@
-#include "wallnut.h"
+#include "pumpkin.h"
 
-WallNut::WallNut():Plant ("WallNut","://PVZ_Images/Plants_gif/WallNut.gif")
+Pumpkin::Pumpkin():Plant ("Pumpkin","://PVZ_Images/Plants_gif/Pumpkin.gif")
 {
     health=4000;
     time=0;
 }
 
-void WallNut::advance(int phase)
+void Pumpkin::advance(int phase)
 {
     if (!phase)
         return;
@@ -15,14 +15,14 @@ void WallNut::advance(int phase)
     {
         if(movie)
             delete movie;
-        movie=new QMovie("://PVZ_Images/Plants_gif/WallNut1.gif");
+        movie=new QMovie("://PVZ_Images/Plants_gif/Pumpkin1.gif");
         movie->start();
     }
     else if (health <= 1333&&health>0)//被啃食阶段二
     {
         if(movie)
             delete movie;
-        movie=new QMovie("://PVZ_Images/Plants_gif/WallNut2.gif");
+        movie=new QMovie("://PVZ_Images/Plants_gif/Pumpkin2.gif");
         movie->start();
     }
     else if(health<=0)//植物死亡
