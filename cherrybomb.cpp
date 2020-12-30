@@ -49,5 +49,5 @@ void CherryBomb::advance(int phase)
 bool CherryBomb::collidesWithItem(const QGraphicsItem *other, Qt::ItemSelectionMode mode) const
 {
     //周围9个格子里有僵尸
-    return other->type() == Zombie::Type && qAbs(other->y() - y()) <196 && qAbs(other->x() - x()) <160;
+    return other->type() == Zombie::Type && qAbs(other->y() - y()) <100 && qAbs(other->x() - x()) <85;
 }

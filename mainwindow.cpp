@@ -55,7 +55,7 @@ void MainWindow::addZombie()
         int i = qrand() % 5;//行
 
         Zombie *zombie;
-        zombie = new NormalZombie;
+        zombie = new ClownZombie;
 //        if (type <=4)
 //            zombie = new NormalZombie;
 //        else if (type <=5)

@@ -31,6 +31,7 @@ Zombie::Zombie(QString _name,QString path)
     basketball=0;
 
     if_slow=false;
+    if_jump=false;
 }
 
 Zombie::~Zombie()
@@ -69,7 +70,7 @@ void Zombie::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QW
 {
     //body.gif
     QImage image = body->currentImage();
-    if (if_slow)//被snowpea击中过
+    if (if_slow&&(!(name=="ClownZombie"&&state==1)))//被snowpea击中过
     {
         int w = image.width();
         int h = image.height();
@@ -80,7 +81,14 @@ void Zombie::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QW
                 line[j << 2] = 200;
         }
     }
-    painter->drawImage(QRectF(-70, -100, 140, 140), image);
+    if(state==5)
+        painter->drawImage(QRectF(-100, -100, 200, 140), image);
+    else if(name=="NewspaperZombie")
+        painter->drawImage(QRectF(-100, -100, 160, 140), image);
+    else if(name=="PoleVaultingZombie"&&state==0)
+        painter->drawImage(QRectF(-100, -100, 200, 140), image);
+    else
+        painter->drawImage(QRectF(-70, -100, 140, 140), image);
 
     if (head)
     {

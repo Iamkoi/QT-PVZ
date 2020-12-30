@@ -23,6 +23,7 @@ public:
     int health;//剩余生命值
     int basketball;//篮球数量
     bool if_slow;//是否已经被寒冰射手射中
+    bool if_jump;//是否已经跳过去，撑杆僵尸用
 
     enum { Type = UserType + 2};
     int type() const override;

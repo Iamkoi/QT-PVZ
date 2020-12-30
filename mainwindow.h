@@ -11,11 +11,11 @@
 #include "card.h"
 
 #include "normalzombie.h"
-//#include "coneheadzombie.h"
-//#include "newspaperzombie.h"
+#include "coneheadzombie.h"
+#include "newspaperzombie.h"
+#include "polevaultingzombie.h"
+#include "clownzombie.h"
 //#include "catapultzombie.h"
-//#include "clownzombie.h"
-//#include "polevaultingzombie.h"
 
 class MainWindow : public QMainWindow
 {

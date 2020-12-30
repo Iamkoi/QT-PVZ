@@ -47,7 +47,11 @@ SOURCES += \
     squash.cpp \
     cherrybomb.cpp \
     garlic.cpp \
-    pumpkin.cpp
+    pumpkin.cpp \
+    coneheadzombie.cpp \
+    newspaperzombie.cpp \
+    polevaultingzombie.cpp \
+    clownzombie.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -71,7 +75,11 @@ HEADERS += \
     squash.h \
     cherrybomb.h \
     garlic.h \
-    pumpkin.h
+    pumpkin.h \
+    coneheadzombie.h \
+    newspaperzombie.h \
+    polevaultingzombie.h \
+    clownzombie.h
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
