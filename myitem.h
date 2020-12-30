@@ -8,8 +8,8 @@
 class MyItem : public QGraphicsItem
 {
 public:
-    MyItem();
     enum { Type = UserType + 3};
+    MyItem();
     int type() const override;
 };
 

@@ -1,17 +1,20 @@
 #include "mainwindow.h"
-#include "shop.h"
-#include "map.h"
 
-MainWindow::MainWindow(QWidget *parent)
-    : QMainWindow(parent)
+MainWindow::MainWindow(QWidget *parent):QMainWindow(parent)
 {
     //背景图
     scene=new QGraphicsScene(this);
     scene->setSceneRect(150,0,900,600);
+    scene->setBackgroundBrush(QPixmap("://PVZ_Images/Background.jpg"));
+    scene->setItemIndexMethod(QGraphicsScene::NoIndex);
     setFixedSize(900,600);
 
     //计时器
     timer=new QTimer;
+    connect(timer, &QTimer::timeout, scene, &QGraphicsScene::advance);
+    connect(timer, &QTimer::timeout, this, &MainWindow::addZombie);
+    connect(timer, &QTimer::timeout, this, &MainWindow::check_gameover);
+    timer->start(33);//每隔33毫秒timeout一次，调用一次advance函数
 
     //商店
     shop = new Shop;
@@ -23,21 +26,9 @@ MainWindow::MainWindow(QWidget *parent)
     map->setPos(618, 326);
     scene->addItem(map);
 
-//    view=new QGraphicsView(this);
-//    view->setScene(scene);
-//    view->resize(902,602);
-
-    view = new QGraphicsView(scene, this);
-    view->resize(902, 602);
-    view->setRenderHint(QPainter::Antialiasing);
-    view->setBackgroundBrush(QPixmap("://PVZ_Images/Background.jpg"));
-    view->setCacheMode(QGraphicsView::CacheBackground);//
-    view->setViewportUpdateMode(QGraphicsView::BoundingRectViewportUpdate);//
-    connect(timer, &QTimer::timeout, scene, &QGraphicsScene::advance);
-    connect(timer, &QTimer::timeout, this, &MainWindow::addZombie);
-    connect(timer, &QTimer::timeout, this, &MainWindow::check_gameover);
-
-    timer->start(33);
+    view=new QGraphicsView(this);
+    view->setScene(scene);
+    view->resize(902,602);
     view->show();
 }
 
@@ -63,7 +54,8 @@ void MainWindow::addZombie()
         int type = qrand() % 10;//类型
         int i = qrand() % 5;//行
 
-//        Zombie *zombie;
+        Zombie *zombie;
+        zombie = new NormalZombie;
 //        if (type <=4)
 //            zombie = new NormalZombie;
 //        else if (type <=5)
@@ -77,12 +69,8 @@ void MainWindow::addZombie()
 //        else
 //            zombie = new CatapultZombie;
 
-//        zombie->setPos(1028, 130 + 98 * i);
-//        scene->addItem(zombie);
-
-//        qDebug()<<"addZombie_pos:"<<zombie->x()<<","<<zombie->y();
-//        qDebug()<<"type:"<<zombie->type();
-//        qDebug()<<"Zombie::type"<<Zombie::Type;
+        zombie->setPos(1028, 130 + 98 * i);
+        scene->addItem(zombie);
     }
 }
 
@@ -94,13 +82,13 @@ void MainWindow::check_gameover()
     {
         counter = 0;
         const QList<QGraphicsItem *> items = scene->items();
-//        foreach (QGraphicsItem *item, items)
-//            if (item->type() == Zombie::Type && item->x() < 200)
-//            {
-//                scene->addPixmap(QPixmap("://PVZ_Images/ZombiesWon.png"))->setPos(336, 92);
-//                scene->advance();
-//                timer->stop();
-//                return;
-//            }
+        foreach (QGraphicsItem *item, items)
+            if (item->type() == Zombie::Type && item->x() < 200)
+            {
+                scene->addPixmap(QPixmap("://PVZ_Images/ZombiesWon.png"))->setPos(336, 92);
+                scene->advance();
+                timer->stop();
+                return;
+            }
     }
 }

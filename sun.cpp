@@ -12,7 +12,7 @@
 
 Sun::Sun()//用于系统产生阳光
 {
-    maxY=130 + qrand() % (98 * 5);
+    maxY=130 + qrand() % (600-140);
     movie=new QMovie("://PVZ_Images/Shop/Sun.gif");
     movie->start();
 
@@ -20,11 +20,12 @@ Sun::Sun()//用于系统产生阳光
     time = int(10.0 * 1000 / 33);
     speed = 60.0 * 50 / 1000;
 
-    setPos(QPointF(290 + qrand() % (82 * 7),70));
+    setPos(QPointF(220 + qrand() % (900-160),70));
 }
+
 Sun::Sun(QPointF pos)//用于向日葵产生阳光
 {
-    maxY=pos.y() + qrand() % 30 + 15;
+    maxY=pos.y() + qrand() % 50;
     movie=new QMovie("://PVZ_Images/Shop/Sun.gif");
     movie->start();
 
@@ -34,6 +35,7 @@ Sun::Sun(QPointF pos)//用于向日葵产生阳光
 
     setPos(QPointF(pos.x() + qrand() % 30 - 15,pos.y()));
 }
+
 Sun::~Sun()//将新new的东西删掉
 {
     if(movie!=nullptr)
@@ -44,10 +46,12 @@ QRectF Sun::boundingRect()const
 {
     return QRectF(-35, -35, 70, 70);
 }
+
 void Sun::paint(QPainter *painter,const QStyleOptionGraphicsItem *option,QWidget *widget)
 {
     painter->drawImage(boundingRect(), movie->currentImage());
 }
+
 void Sun::mousePressEvent(QGraphicsSceneMouseEvent *event)
 {
     Shop *shop = qgraphicsitem_cast<Shop *>(scene()->items(QPointF(300, 15))[0]);
@@ -56,6 +60,7 @@ void Sun::mousePressEvent(QGraphicsSceneMouseEvent *event)
     counter = time;//下一次advance函数里就会delete this
     event->setAccepted(true);
 }
+
 void Sun::advance(int phase)
 {
     if (!phase)
@@ -65,8 +70,4 @@ void Sun::advance(int phase)
         delete this;
     else if (y() < maxY)
         setY(y() + speed);
-}
-int Sun::type() const
-{
-    return Type;
 }

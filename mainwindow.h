@@ -7,13 +7,22 @@
 #include <QTimer>
 
 #include "shop.h"
+#include "map.h"
+#include "card.h"
+
+#include "normalzombie.h"
+//#include "coneheadzombie.h"
+//#include "newspaperzombie.h"
+//#include "catapultzombie.h"
+//#include "clownzombie.h"
+//#include "polevaultingzombie.h"
 
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
 
 public:
-    MainWindow(QWidget *parent = 0);
+    explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
     void addZombie();
     void check_gameover();
@@ -25,5 +34,4 @@ private:
 
     QTimer *timer;
 };
-
 #endif // MAINWINDOW_H

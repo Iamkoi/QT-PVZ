@@ -19,7 +19,7 @@ private:
     qreal speed;//阳光每次移动距离
 
 public:
-    Sun();
+    Sun();//用于系统产生阳光
     Sun(QPointF pos);//用于向日葵产生阳光
     ~Sun() override;//将新new的东西删掉
 
@@ -27,7 +27,6 @@ public:
     void paint(QPainter *painter,const QStyleOptionGraphicsItem *option,QWidget *widget)override;
     void mousePressEvent(QGraphicsSceneMouseEvent *event)override;
     void advance(int phase) override;
-    int type() const override;
 };
 
 #endif // SUN_H

@@ -31,7 +31,13 @@ SOURCES += \
     shop.cpp \
     sun.cpp \
     map.cpp \
-    card.cpp
+    card.cpp \
+    plant.cpp \
+    zombie.cpp \
+    peashooter.cpp \
+    normalzombie.cpp \
+    pea.cpp \
+    pea_normal.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -39,7 +45,13 @@ HEADERS += \
     shop.h \
     sun.h \
     map.h \
-    card.h
+    card.h \
+    plant.h \
+    zombie.h \
+    peashooter.h \
+    normalzombie.h \
+    pea.h \
+    pea_normal.h
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
