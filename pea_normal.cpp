@@ -37,4 +37,5 @@ void Pea_Normal::advance(int phase)
     setX(x() + speed);
     if (x() > 1069)
         delete this;
+    return;
 }

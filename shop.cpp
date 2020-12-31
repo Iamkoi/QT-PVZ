@@ -19,7 +19,7 @@ Shop::Shop()
 {
     counter=0;//系统产生阳光的计时器
     time=int(7.0 * 1000 / 33);;//系统产生阳光的要求时间
-    sun=2000;//阳光数  TODO 200
+    sun=200;//阳光数  TODO 200
 
     Card *card = nullptr;
     for (int i = 0; i < 10; ++i)

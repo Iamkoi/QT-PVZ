@@ -41,7 +41,7 @@ MainWindow::~MainWindow()
 
 void MainWindow::addZombie()
 {
-    static int time = 2 * 1000 / 33;//TODO
+    static int time = 10 * 1000 / 33;//TODO
     static int counter = 0;
 
     if (++counter >= time)
@@ -55,19 +55,19 @@ void MainWindow::addZombie()
         int i = qrand() % 5;//行
 
         Zombie *zombie;
-        zombie = new ClownZombie;
-//        if (type <=4)
-//            zombie = new NormalZombie;
-//        else if (type <=5)
-//            zombie = new ConeheadZombie;
-//        else if (type <=6)
-//            zombie = new NewspaperZombie;
-//        else if (type <=7)
-//            zombie = new PoleVaultingZombie;
-//        else if (type <=8)
-//            zombie = new ClownZombie;
-//        else
-//            zombie = new CatapultZombie;
+
+        if (type <=4)
+            zombie = new NormalZombie;
+        else if (type <=5)
+            zombie = new ConeheadZombie;
+        else if (type <=6)
+            zombie = new NewspaperZombie;
+        else if (type <=7)
+            zombie = new PoleVaultingZombie;
+        else if (type <=8)
+            zombie = new ClownZombie;
+        else
+            zombie = new CatapultZombie;
 
         zombie->setPos(1028, 130 + 98 * i);
         scene->addItem(zombie);

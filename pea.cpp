@@ -24,7 +24,8 @@ int Pea::type() const
 
 QRectF Pea::boundingRect() const
 {
-    return QRectF(-12, -28, 24, 24);
+    //return QRectF(-12, -28, 24, 24);
+    return QRectF(-15, -28, 30, 30);
 }
 
 void Pea::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)

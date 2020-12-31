@@ -12,8 +12,8 @@ QVector<QString> Card::name = {"SunFlower", "PeaShooter", "Repeater", "SnowPea",
                                "TallNut", "Squash", "CherryBomb", "Garlic", "Pumpkin"};
 QVector<int> Card::cost = {50,100,200,175,50,125,50,150,50,125};
 //QVector<double> Card::cool = {7.5,7.5,7.5,7.5,30, 30,30,50,7.5,30};//单位：秒
-//QVector<int> Card::cool = {225,225,225,225,900, 900,900,1500,225,900};//单位：秒/30
-QVector<int> Card::cool = {0,0,0,0,0, 0,0,0,0,0};//单位：秒/30
+QVector<int> Card::cool = {225,225,225,225,900, 900,900,1500,225,900};//单位：秒/30
+//QVector<int> Card::cool = {0,0,0,0,0, 0,0,0,0,0};//单位：秒/30
 QVector<int> Card::pos_x={180,210,300,360,420,480,540,600,660,720};
 int Card::pos_y=4;
 //宽：60 高：70

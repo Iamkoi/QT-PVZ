@@ -64,7 +64,7 @@ void ClownZombie::advance(int phase)
 
     else//初始状态或攻击状态
     {
-        int rd=qrand()%500;//1/500的概率会爆炸   TODO
+        int rd=qrand()%500;//1/500的概率会爆炸
         if(rd==0)//爆炸  转state1
         {
             state=1;
@@ -128,5 +128,5 @@ void ClownZombie::advance(int phase)
 bool ClownZombie::collidesWithItem(const QGraphicsItem *other, Qt::ItemSelectionMode mode) const
 {
     //周围3*3内有无植物
-    return other->type() == Plant::Type && qAbs(other->y() - y()) <100 && qAbs(other->x() - x()) <85;
+    return other->type() == Plant::Type && qAbs(other->y() - y()) <100 && qAbs(other->x() - x()) <50;
 }

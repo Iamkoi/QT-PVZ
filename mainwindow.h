@@ -15,7 +15,7 @@
 #include "newspaperzombie.h"
 #include "polevaultingzombie.h"
 #include "clownzombie.h"
-//#include "catapultzombie.h"
+#include "catapultzombie.h"
 
 class MainWindow : public QMainWindow
 {

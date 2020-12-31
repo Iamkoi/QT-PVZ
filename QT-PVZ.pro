@@ -51,7 +51,9 @@ SOURCES += \
     coneheadzombie.cpp \
     newspaperzombie.cpp \
     polevaultingzombie.cpp \
-    clownzombie.cpp
+    clownzombie.cpp \
+    catapultzombie.cpp \
+    basketball.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -79,7 +81,9 @@ HEADERS += \
     coneheadzombie.h \
     newspaperzombie.h \
     polevaultingzombie.h \
-    clownzombie.h
+    clownzombie.h \
+    catapultzombie.h \
+    basketball.h
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
